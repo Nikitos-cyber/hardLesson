@@ -2,7 +2,6 @@
   let num = 266219;
   let output = " ";
   let result = 1;
-  let integerTwo = ' ';
   function getLenght(num){
   "use strict";
    return num.toString().length;
@@ -25,8 +24,6 @@
   
   console.log('result в 3й степени: ' + result ** 3);
 
-  for (let a = 0 ; a < 2 ; a++){
-    let str = String(num);
-    integerTwo += str [a];
-  }
-  console.log('Две первых цифры числа ' + integerTwo);
+  let string = String(num);
+  
+  console.log('Две первых цифры числа ' + string.substr(0, 2));
