@@ -1,28 +1,42 @@
   'use strict';
 
-  let str = '                                                         Далеко-далеко за словесными горами в стране, гласных и согласных живут рыбные тексты. На берегу, речью от всех? Большой, безорфографичный! Предупреждал ipsum взгляд но домах языкового ему запятой большой толку инициал продолжил заманивший напоивший, всеми большого живет всемогущая которой выйти ее, даль, это на берегу над назад рыбного которое своего. Своего себя повстречался языком несколько? Заманивший. ';
-  
-  let strEdit = function(string){
-     
-    if (typeof string != 'string'){
-      return ('Передана не строка!!');
+  let arr = ['223','3321','838','429920','2288','2288','292820'];
+
+  let startString = function (){
+      let str = '';
+    for( let i = 0 ; i < arr.length; i++){
+      let string = arr[i];
+      string = string.slice(1,2);
+      if(string == 2 || string == 4){
+        str += arr[i] + ' ';
+      }
     }
 
+    return str;
 
-    let str = string.replace(/^\s+|\s+$/g, '');
+  };
 
-    if(str.length > 30){
-      let text='';
+  console.log(startString());
 
-         for( let i = 30 ; i < str.length; i++){
-             
-           text += str[i];
-         }
 
-        let result = str.replace(text ,'...');
-        return result;
-       }
+  let simpleNumbers = function (num){
+    
+    
+    for ( let i = 2 ; i < num  ; i++){
+      if(num % i === 0){
+        
+        return 0;
+      }
+      
+      }
+      if (num > 1){
+        console.log('Простое число : ' + num + ' делители числа : '+'1 и ' + num);
+      }
   };
 
   
-  console.log(strEdit(str));
+  for( let j = 1 ; j < 100 ; j++){
+    simpleNumbers(j);
+  }
+
+  
