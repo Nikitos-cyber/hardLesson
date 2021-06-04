@@ -1,42 +1,40 @@
   'use strict';
 
-  let arr = ['223','3321','838','429920','2288','2288','292820'];
+  let week = ['Воскресенье','Понедельник', 'Вторник', 'Среда', 'Четверг','Пятница', 'Суббота' ];
 
-  let startString = function (){
-      let str = '';
-    for( let i = 0 ; i < arr.length; i++){
-      let string = arr[i];
-      string = string.slice(1,2);
-      if(string == 2 || string == 4){
-        str += arr[i] + ' ';
-      }
+  let lookWeek = function(){
+    let date = new Date();
+
+    function today (date){
+      return date.getDay();
     }
-
-    return str;
-
-  };
-
-  console.log(startString());
-
-
-  let simpleNumbers = function (num){
-    
-    
-    for ( let i = 2 ; i < num  ; i++){
-      if(num % i === 0){
-        
-        return 0;
-      }
+    let num = today(date);
+    console.log('num: ', num);
+  
+    let str = 'Суббота';
+    let str2 = 'Воскресенье';
+    str = str.italics();
+    str2 = str2.italics();
+    let result = '';
+    week.splice(6, 6,str );
+    week.splice(0, 1,str2 );
+    week.forEach(function(item,i,week){
       
+     
+      if(num  === i){
+        let str3 = item;
+        str3 = str3.bold(); 
+       result += str3 + '<br><br>';
+      }else{
+         result += item + '<br><br>';
       }
-      if (num > 1){
-        console.log('Простое число : ' + num + ' делители числа : '+'1 и ' + num);
-      }
+     
+    });
+
+    
+
+    window.document.write(result);
+    
   };
 
-  
-  for( let j = 1 ; j < 100 ; j++){
-    simpleNumbers(j);
-  }
-
-  
+  lookWeek();
